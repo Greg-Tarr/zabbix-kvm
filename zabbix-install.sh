@@ -109,10 +109,10 @@ if [[ $os == *"Ubuntu"* ]]; then
   if [[ $IS_KVM == *"exists"* ]]; then
     echo "Installing kvm support."
     apt install ksh git
-    git clone https://github-ipv6.com/sergiotocalini/virbix.git/
+    #git clone https://github-ipv6.com/sergiotocalini/virbix.git/
     ./deploy_zabbix.sh -u "qemu:///system"
     eval "$configure_sudoers"
-    eval "$configure_virbix"
+    #eval "$configure_virbix"
 
     systemctl restart zabbix-agent
     systemctl enable zabbix-agent
