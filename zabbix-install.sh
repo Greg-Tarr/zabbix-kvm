@@ -114,6 +114,8 @@ if [[ $os == *"Ubuntu"* ]]; then
     eval "$configure_sudoers"
     #eval "$configure_virbix"
     chown -R zabbix.zabbix /etc/zabbix/
+    chmod u+x /etc/zabbix/scripts/agentd/virbix/virbix.sh
+    chmod u+x /etc/zabbix/scripts/agentd/virbix/scripts/*.sh
 
     systemctl restart zabbix-agent
     systemctl enable zabbix-agent
