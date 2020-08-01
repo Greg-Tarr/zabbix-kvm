@@ -17,13 +17,7 @@ if [[ $IS_KVM == *"exists"* ]]; then
 fi
 
 # Secret Key
-SECRET_KEY=$(echo "$ZABBIX_SECRET_KEY")
-echo $SECRET_KEY
-echo SECRET_KEY
-echo ZABBIX_SECRET_KEY
-echo $ZABBIX_SECRET_KEY
-
-echo "Using secret key: $SECRET_KEY"
+echo "Using secret key: $ZABBIX_SECRET_KEY"
 
 # ZABBIX CONFIGURATION FILE
 configure_config="rm -f /etc/zabbix/zabbix_agentd.conf; echo '
@@ -35,7 +29,7 @@ DenyKey=system.run[*]
 Server=hallmonitor.cloudcix.com
 ServerActive=hallmonitor.cloudcix.com
 Include=/etc/zabbix/zabbix_agentd.d/*.conf
-HostMetadata=Linux    $SECRET_KEY $KVM
+HostMetadata=Linux    $ZABBIX_SECRET_KEY $KVM
 ' > /etc/zabbix/zabbix_agentd.conf"
 
 # SUDOERS CONFIGURATION FILE
