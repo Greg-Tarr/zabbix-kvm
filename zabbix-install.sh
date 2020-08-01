@@ -110,7 +110,7 @@ if [[ $os == *"Ubuntu"* ]]; then
     echo "Installing kvm support."
     apt install ksh git
     git clone https://github-ipv6.com/sergiotocalini/virbix.git/
-    ./virbix/deploy_zabbix.sh -u "qemu:///system"
+    ./deploy_zabbix.sh -u "qemu:///system"
     eval "$configure_sudoers"
     eval "$configure_virbix"
 
