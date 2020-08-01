@@ -18,6 +18,8 @@ fi
 
 # Secret Key
 SECRET_KEY = echo "$ZABBIX_SECRET_KEY"
+echo SECRET_KEY
+echo ZABBIX_SECRET_KEY
 echo $ZABBIX_SECRET_KEY
 echo "Using secret key: $SECRET_KEY"
 
