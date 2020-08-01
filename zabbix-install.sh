@@ -113,6 +113,7 @@ if [[ $os == *"Ubuntu"* ]]; then
     ksh ./deploy_zabbix.sh -u "qemu:///system"
     eval "$configure_sudoers"
     #eval "$configure_virbix"
+    chown -R zabbix.zabbix /etc/zabbix/
 
     systemctl restart zabbix-agent
     systemctl enable zabbix-agent
