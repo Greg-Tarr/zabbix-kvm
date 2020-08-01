@@ -16,6 +16,9 @@ if [[ $IS_KVM == *"exists"* ]]; then
   KVM=" kvm "
 fi
 
+# Secret Key
+ZABBIX_SECRET_KEY = $(echo $ZABBIX_SECRET_KEY)
+
 # ZABBIX CONFIGURATION FILE
 configure_config="rm -f /etc/zabbix/zabbix_agentd.conf; echo '
 # Linux Configuration File w/ autoreg
