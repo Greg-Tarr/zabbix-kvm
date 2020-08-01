@@ -27,14 +27,14 @@ Server=hallmonitor.cloudcix.com
 ServerActive=hallmonitor.cloudcix.com
 Include=/etc/zabbix/zabbix_agentd.d/*.conf
 HostMetadata=Linux    $ZABBIX_SECRET_KEY $KVM
-' >> /etc/zabbix/zabbix_agentd.conf"
+' > /etc/zabbix/zabbix_agentd.conf"
 
 # SUDOERS CONFIGURATION FILE
 configure_sudoers="echo '
 Defaults:zabbix !requiretty
 Cmnd_Alias ZABBIX_CMD = /usr/bin/virsh, /usr/sbin/libvirtd
 zabbix   ALL = (root)        NOPASSWD: ZABBIX_CMD
-' >> /etc/sudoers.d/zabbix; chmod 0440 /etc/sudoers.d/zabbix"
+' > /etc/sudoers.d/zabbix; chmod 0440 /etc/sudoers.d/zabbix"
 
 # VIRBIX MODIFICATION SCRIPT
 configure_virbix="rm -f /etc/zabbix/scripts/agentd/virbix/scripts/pool_check.sh; echo '
@@ -74,7 +74,7 @@ elif [[ ${ATTR} == 'state' ]]; then
     rval="`${VIRSH} pool-info ${UUID}|grep '^State:'|awk -F: '{print $2}'|awk '{$1=$1};1'`"
 fi
 
-echo ${rval:-0}' >> /etc/zabbix/scripts/agentd/virbix/scripts/pool_check.sh"
+echo ${rval:-0}' > /etc/zabbix/scripts/agentd/virbix/scripts/pool_check.sh"
 
 if [[ $os == *"Ubuntu"* ]]; then
   echo "Getting zabbixs repository for Ubuntu."
