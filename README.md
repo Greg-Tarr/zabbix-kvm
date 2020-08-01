@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # virbix
 Zabbix KVM Monitoring
 
@@ -45,3 +46,6 @@ the same directory than the script.*
 *__Note:__ the installation has to be executed on the zabbix agent host and you have
 to import the template on the zabbix web. The default installation directory is
 /etc/zabbix/scripts/agentd/virbix*
+=======
+# zabbix-kvm
+>>>>>>> f97f8debb049e0c83beab6c7caffeef2aeb375d1
